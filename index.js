@@ -198,9 +198,10 @@ const create = (win, options) => {
 		// Filter out leading/trailing separators
 		// TODO: https://github.com/electron/electron/issues/5869
 		menuTemplate = removeUnusedMenuItems(menuTemplate);
-
+		console.log(options.labels);
 		for (const menuItem of menuTemplate) {
 			// Apply custom labels for default menu items
+			console.log(options.labels[menuItem.id]);
 			if (options.labels && options.labels[menuItem.id]) {
 				menuItem.label = options.labels[menuItem.id];
 			}
